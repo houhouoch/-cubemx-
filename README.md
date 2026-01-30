@@ -17,6 +17,7 @@
 3.切换至 C/C++ (或 C/C++ (AC6)) 选项卡。  
 4.在底部的 Misc Controls 框中填入：  
 --no-multibyte-chars  
+
 ---
 
 
