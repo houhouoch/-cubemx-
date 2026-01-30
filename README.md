@@ -1,15 +1,19 @@
 # -cubemx-
-CubeMX v6.13、v6.14
-解决中文乱码
-打开cubemx文件所在地
-在文件夹里，双击打开：STM32CubeMX.l4j.ini
-在末尾文件，追加：-Dfile.encoding=GBK   （前后不带空格、末尾不带回车换行) 
-Keil：Edit / Configuration / Encoding / GB2312
+软件版本：STM32CubeMX v6.13 / v6.14
+为了让 CubeMX 生成符合中文 Windows 系统习惯的文件，需要修改其启动配置：
+找到 STM32CubeMX 的安装目录。
+找到并使用记事本打开 STM32CubeMX.l4j.ini 文件。
+在文件末尾追加以下代码：
+-Dfile.encoding=GBK
+注意：前后不要有空格，末尾不要有换行符，保存后重启 CubeMX。
 
 @https://blog.csdn.net/qq_49053936/article/details/145456532
-//争对更高版本的cubemx
-在mdk中的C++中 Misc Controls中写入
---no-multibyte-chars
-目的是告诉编译器：“把源代码里的所有字符都当成单字节的 ASCII 码来处理，别试图去解析什么多字节编码（如 UTF-8 或 GBK）。”
 
-经过以上设置：cubemx生成的文件中 若含有中文注释 再也不乱码了
+//针对更高版本的STM32CubeMX 如 v6.15以上
+防止编译器在处理 GBK 字符（中文注释）时误判语法错误：
+在 Keil 工程右键选择 Options for Target...。
+切换至 C/C++ (或 C/C++ (AC6)) 选项卡。
+在底部的 Misc Controls 框中填入：
+--no-multibyte-chars
+同时建议在同一位置加入 --locale=english 以确保报错信息为英文，防止报错信息本身乱码。
+
