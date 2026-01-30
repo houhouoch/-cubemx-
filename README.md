@@ -3,27 +3,22 @@
 ## 📦 STM32CubeMX 配置 
 **软件版本**：STM32CubeMX v6.13 / v6.14*  
 为了让 CubeMX 生成符合中文 Windows 系统习惯的文件，需要修改其启动配置：  
-1.找到 STM32CubeMX 的安装目录。
-2.找到并使用记事本打开 STM32CubeMX.l4j.ini 文件。
-3.在文件末尾追加以下代码：
--Dfile.encoding=GBK
-注意：前后不要有空格，末尾不要有换行符，保存后重启 CubeMX。
+1.找到 STM32CubeMX 的安装目录。  
+2.找到并使用记事本打开 STM32CubeMX.l4j.ini 文件。  
+3.在文件末尾追加以下代码：  
+-Dfile.encoding=GBK  
+注意：前后不要有空格，末尾不要有换行符，保存后重启 CubeMX。  
 
-@https://blog.csdn.net/qq_49053936/article/details/145456532
+@https://blog.csdn.net/qq_49053936/article/details/145456532  
 
-//针对更高版本的STM32CubeMX 如 v6.15以上
-防止编译器在处理 GBK 字符（中文注释）时误判语法错误：
-在 Keil 工程右键选择 Options for Target...。
-切换至 C/C++ (或 C/C++ (AC6)) 选项卡。
-在底部的 Misc Controls 框中填入：
---no-multibyte-chars
-同时建议在同一位置加入 --locale=english 以确保报错信息为英文，防止报错信息本身乱码。
+//针对更高版本的STM32CubeMX 如 v6.15以上  
+防止编译器在处理 GBK 字符（中文注释）时误判语法错误：  
+在 Keil 工程右键选择 Options for Target...。  
+切换至 C/C++ (或 C/C++ (AC6)) 选项卡。  
+在底部的 Misc Controls 框中填入：  
+--no-multibyte-chars  
+同时建议在同一位置加入 --locale=english 以确保报错信息为英文，防止报错信息本身乱码。  
 
 ---
 
-### 💡 为什么这样改就能换行了？
-1.  **数字后的空格**：我把 `1.` 变成了 `1. `（加了一个空格）。没有这个空格，GitHub 不会认为这是个列表。
-2.  **双回车**：我在每一行文字之间都加了一个**空行**。在 GitHub 里，只有空行才能产生你想要的“视觉间距”。
-3.  **代码块修饰**：把具体的指令放在了反引号 ``` 里面，这样读者一眼就能看出哪行是需要输入的命令。
 
-**你可以把这段代码贴到 GitHub 的预览窗口看看，是不是已经有完美的间距了？**
