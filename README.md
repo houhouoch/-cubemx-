@@ -1,7 +1,7 @@
 # 🛠 STM32 开发环境中文乱码修复指南
 针对 **STM32CubeMX** 生成代码在 **Keil MDK** 中出现中文注释乱码或编译报错（如 `Error #8`）的终极解决方案。
 ## 📦 STM32CubeMX 配置 
-软件版本：STM32CubeMX v6.13 / v6.14
+*软件版本：STM32CubeMX v6.13 / v6.14*
 为了让 CubeMX 生成符合中文 Windows 系统习惯的文件，需要修改其启动配置：
 找到 STM32CubeMX 的安装目录。
 找到并使用记事本打开 STM32CubeMX.l4j.ini 文件。
