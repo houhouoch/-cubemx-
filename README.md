@@ -11,14 +11,12 @@
 
 @https://blog.csdn.net/qq_49053936/article/details/145456532  
 
-//针对更高版本的STM32CubeMX 如 v6.15以上  
-防止编译器在处理 GBK 字符（中文注释）时误判语法错误：  
-在 Keil 工程右键选择 Options for Target...。  
-切换至 C/C++ (或 C/C++ (AC6)) 选项卡。  
-在底部的 Misc Controls 框中填入：  
+# 针对更高版本的STM32CubeMX 如 v6.15以上  
+1.防止编译器在处理 GBK 字符（中文注释）时误判语法错误：  
+2.在 Keil 工程右键选择 Options for Target...。  
+3.切换至 C/C++ (或 C/C++ (AC6)) 选项卡。  
+4.在底部的 Misc Controls 框中填入：  
 --no-multibyte-chars  
-同时建议在同一位置加入 --locale=english 以确保报错信息为英文，防止报错信息本身乱码。  
-
 ---
 
 
